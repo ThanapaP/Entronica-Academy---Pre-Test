@@ -1,35 +1,29 @@
-//Plus +
-function plus(num1,num2) 
-{
-    return num1+num2;
-}
-
-//Minus -
-function minus(num1,num2) 
-{
-    return num1-num2;
-}
-
-//Multiplied *
-function multiplied(num1,num2) 
-{
-    return num1*num2;
-}
-
-//Divide /
-function divide(num1,num2) 
-{ 
-    if(num2 == 0){
+function caculator(num1, operator, num2) {
+  switch (operator) {
+    case "+":
+      return num1 + num2;
+      break;
+    case "-":
+      return num1 - num2;
+      break;
+    case "*":
+      return num1 * num2;
+      break;
+    case "/":
+      if (num2 == 0) {
         return "Can't divide by 0!";
-    }else{
-        return num1/num2;
-    }
+      } else {
+        return num1 / num2;
+      }
+      break;
+    default:
+      return "Invalid Operator";
+  }
 }
 
-
-console.log(plus(2,2));
-console.log(minus(2,2));
-console.log(multiplied(2,2));
-console.log(divide(4,2));
-console.log(divide(4,0));
-
+console.log(caculator(2, "+", 2));
+console.log(caculator(2, "-", 2));
+console.log(caculator(2, "*", 2));
+console.log(caculator(4, "/", 2));
+console.log(caculator(4, "/", 0));
+console.log(caculator(4, ".", 0));
